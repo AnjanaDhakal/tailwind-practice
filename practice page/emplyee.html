@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src='https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js'
+        referrerpolicy="origin">
+        </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <link rel="stylesheet" href="input.css">
+    <link rel="stylesheet" href="custom.css">
+    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <title>employee</title>
+</head>
+
+<body>
+    <div class="font-light pr-3 pl-5 py-3 lg:pl-80">
+
+        <div class="flex items-center justify-between ">
+            <span class="text-lg font-bold">EMPLOYEE INFORMATION SYSTEM</span>
+            <div class="bg-white p-4 flex items-center flex-wrap">
+                <ul class="flex items-center -space-x-0.50">
+                    <li class="inline-flex items-center">
+                        <a href="#" class="text-black hover:text-blue-500">
+                            Employee Information
+                        </a>
+
+                        <svg class="w-5 h-auto fill-current mx-2 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0V0z" fill="none" />
+                            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z" />
+                        </svg>
+
+                    </li>
+
+                    <li class="inline-flex items-center">
+                        <a href="#" class="text-black font-semibold   hover:text-blue-500">
+                            Employee Records
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pr-3 mx-4 my-2 ">
+            <div class="shadow ">
+
+                <div class=" mx-3">
+                    <div class="flex justify-between items-center">
+                        <p class=" text-gray-600 text-base font-semibold">View Employee Records</p>
+                        <p class="text-base font-semibold bg-yellow-400 m-1 p-2 rounded">Add New Employees</p>
+                    </div>
+
+                    <div class="flex items-center justify-between  ">
+                        <div>
+                            <ul
+                                class="flex items-center space-x-2 bg-yellow-400  border border-solid border-gray-700 rounded">
+                                <li class=" p-2 border-r-2  border-gray-700 text-sm ">Copy</li>
+                                <li class="p-2  border-r-2 border-gray-700 text-sm">Excel</li>
+                                <li class="p-2  border-r-2 border-gray-700 text-sm">PDF</li>
+                                <li class="p-2 ">Column Visibility</li>
+                            </ul>
+                        </div>
+                        <!-- <div class="flex items-center space-x-4 justify-between">
+                            <label for="search" class="form-label inline-block mb-2 text-gray-700">Search:</label>
+                            <input type="search" id="myinput" data-search
+                                class="  form-control w-full md:w-96 px-3  py-0.5 text-base font-normal text-black bg-white  border border-solid border-gray-300 rounded  focus:outline-none  "
+                                onkeyup="searchFun()" />
+                        </div> -->
+                    </div>
+
+                    <!-- <div class="block w-full overflow-x-auto my-2">
+                        <table class="items-center w-full bg-transparent border border-r-0 table-auto " id="mytable">
+                            <thead>
+                                <tr>
+                                    <th
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left  ">
+                                        Name</th>
+                                    <th
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                        MId</th>
+                                    <th
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                        EID</th>
+                                    <th
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                        Gender</th>
+                                    <th
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                        Dob(BS/AD) </th>
+                                    <th
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                        Age</th>
+                                    <th
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                        Designation</th>
+                                    <th
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                        Department</th>
+                                    <th
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                        Station</th>
+                                    <th
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                        Qualification</th>
+                                    <th
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                        Doj(BS/AD) </th>
+                                    <th
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr key={1}>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        Airi Satou </td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        XXX</td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        XXX</td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        M </td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        2000/0/0 </td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        33</td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        Developer</td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        Marketing</td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        HeadOffice</td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        Bachelor</td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        2000/0/0</td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        <span class="bg-green-600 rounded-xl px-2 py-1 ">view Employee History</span>
+                                    </td>
+                                </tr>
+                                <tr key={2}>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        ram </td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        XXX</td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        XXX</td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        M </td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        2000/0/0 </td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        34</td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        it</td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        sales</td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        HeadOffice</td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        Bachelor</td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        2000/0/0</td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        <span class="bg-green-600 rounded-xl px-2 py-1 ">view Employee History</span>
+                                    </td>
+                                </tr>
+                                <tr key={3}>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        Airi Satou </td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        XXX</td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        XXX</td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        M </td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        2000/0/0 </td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        35</td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        Developer</td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        Marketing</td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        HeadOffice</td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        Bachelor</td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        2000/0/0</td>
+                                    <td
+                                        class="border-t border-black   align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                        <span class="bg-green-600 rounded-xl px-2 py-1 ">view Employee History</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div> -->
+
+                    <!--Card-->
+                    <div class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
+
+
+                        <table id="record" class="stripe hover"
+                            style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+                            <thead>
+                                <tr>
+                                    <th data-priority="1"
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                        Name</th>
+                                    <th data-priority="2"
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                        Position</th>
+                                    <th data-priority="3"
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                        Office</th>
+                                    <th data-priority="4"
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                        Age</th>
+                                    <th data-priority="5"
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                        Start date</th>
+                                    <th data-priority="6"
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                        Salary</th>
+                                    <th data-priority="7"
+                                        class="px-6 align-middle border-b border-black border-solid py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-bold text-left ">
+                                        Salary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        Anjana</td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        System Architect</td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        Edinburgh</td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        61</td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        2011/04/25</td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        $320,800</td>
+                                    <td
+                                        class="border-t border-black  align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        $320,800</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>Donna Snider</td>
+                                    <td>Customer Support</td>
+                                    <td>New York</td>
+                                    <td>27</td>
+                                    <td>2011/01/25</td>
+                                    <td>$112,000</td>
+                                    <td>$112,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Donna Snider</td>
+                                    <td>Customer Support</td>
+                                    <td>New York</td>
+                                    <td>27</td>
+                                    <td>2011/01/25</td>
+                                    <td>$112,000</td>
+                                    <td>$112,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Donna Snider</td>
+                                    <td>Customer Support</td>
+                                    <td>New York</td>
+                                    <td>27</td>
+                                    <td>2011/01/25</td>
+                                    <td>$112,000</td>
+                                    <td>$112,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Donna Snider</td>
+                                    <td>Customer Support</td>
+                                    <td>New York</td>
+                                    <td>27</td>
+                                    <td>2011/01/25</td>
+                                    <td>$112,000</td>
+                                    <td>$112,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Donna Snider</td>
+                                    <td>Customer Support</td>
+                                    <td>New York</td>
+                                    <td>27</td>
+                                    <td>2011/01/25</td>
+                                    <td>$112,000</td>
+                                    <td>$112,000</td>
+                                </tr>
+
+
+
+
+
+                            </tbody>
+
+                        </table>
+
+
+                    </div>
+                    <!--/Card-->
+
+
+                </div>
+                <!--/container-->
+
+
+
+
+
+
+                <script>
+
+                    $(document).ready(function () {
+                        var table = $('#record').DataTable({
+                            responsive: true,
+                            lengthMenu: [5, 25, 100],
+                            language: {
+                                paginate: {
+                                    next: 'Next',
+                                    previous: 'Previous',
+                                    buttons: [
+                                        'copy', 'csv', 'excel', 'pdf', 'print'
+                                    ],
+                                    "pagingType": "full_numbers"
+                                }
+                            }
+                        });
+                        // Apply the search
+                        $('#searchInput').on('keyup', function () {
+                            table.search(this.value).draw();
+                        
+                        });
+                    });
+
+                </script>
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+    </div>
+    </div>
+
+    <!-- <script>
+        const searchFun = () => {
+            let filter = document.getElementById('myinput').value.toUpperCase();
+
+            let mytable = document.getElementById('mytable');
+
+            let tr = mytable.getElementsByTagName('tr');
+
+            for (var i = 0; i < tr.length; i++) {
+                let td = tr[i].getElementsByTagName('td')[0];
+                if (td) {
+                    let textvlaue = td.textContent || td.innerHTML;
+
+                    if (textvlaue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script> -->
+
+</body>
+
+</html>

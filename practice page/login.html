@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="input.css">
+    <link rel="stylesheet" href="custom.css">
+    <title>login page</title>
+</head>
+
+<body>
+    <section class="bg-gray-900 min-h-screen flex items-center justify-center p-8">
+        <!-- login container -->
+        <div class="box flex gap-20 min-h-full md:w-[75%]  md:pr-20 md:py-24 items-center ">
+
+            <!-- image -->
+            <div class="md:block hidden w-1/2 ">
+                <div class="bg-white border-gray-200 border rounded-lg m-10">
+                    <div class="flex flex-col items-center py-6">
+                        <div>
+                            <img class="h-60 w-60 object-contain" src="assets/logo for stamp.png" alt=""></img>
+                        </div>
+                        <div>
+                            <h1 class="text-4xl font-bold mb-9 ">CE HRMS</h1>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-bold mb-9">Human Resource Management</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- form -->
+            <div class="md:w-1/2 px-3 md:px-8 bg-white border-gray-200 border rounded-lg shadow-2xl">
+
+                <div class="my-14">
+                    <h2 class="font-bold text-4xl text-black text-center mb-6">Login</h2>
+
+
+                    <form action="" class="flex flex-col gap-6">
+                        <input class="px-5 py-2 mt-8  border text-xl font-thin w-full" type="text" name="name" placeholder="Username">
+
+                        <input class="px-5 py-2 border text-xl font-thin" type="password" name="password" placeholder="Password">
+                        <div class="flex items-center">
+                            <input type="checkbox" class=" ml-5 peer relative w-5 h-5 ">
+                            <label for="Name" class="ml-3 text-base text-gray-400 text-center">Keep me logged In</label>
+                        </div>
+
+                        <button class="bg-gray-800 border-blue-500 border text-gray-300 py-3 rounded-md mx-4">Log In</button>
+                    </form>
+                    <div class="py-6 text-center text-base text-blue-600">
+                        <a href="#">Forgot password</a>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+</body>
+
+</html>
